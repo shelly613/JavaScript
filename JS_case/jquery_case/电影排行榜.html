@@ -1,0 +1,147 @@
+<!-- 鼠标移入移出的监听
+通过移入鼠标，显示隐藏的内容 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .box {
+            width: 300px;
+            height: 450px;
+            margin: 50px auto;
+            border: 1px solid #000;
+        }
+
+        .box>h1 {
+            font-size: 20px;
+            line-height: 35px;
+            color: deeppink;
+            padding-left: 10px;
+            border-bottom: 1px dashed #ccc;
+
+        }
+
+        ul>li {
+            list-style: none;
+            padding: 5px 10px;
+            border: 1px dashed #ccc;
+        }
+
+        ul>li:nth-child(-n+3) span {
+            background: deeppink;
+        }
+
+        ul>li>span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: #ccc;
+            text-align: center;
+            line-height: 20px;
+            margin-right: 10px;
+        }
+
+        .content {
+            overflow: hidden;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .content>img {
+            width: 80px;
+            height: 120px;
+            float: left;
+
+        }
+
+        .content>p {
+            float: right;
+            width: 180px;
+            height: 120px;
+            font-size: 12px;
+            line-height: 20px;
+        }
+
+        .current .content {
+            display: block;
+        }
+    </style>
+    <script src="jquery/jquery-3.5.1.js"></script>
+    <script>
+        $(
+            function () {
+                $('li').mouseenter(function () {
+                    $(this).addClass('current');
+                })
+
+                $('li').mouseleave(function () {
+                    $(this).removeClass('current');
+                })
+
+
+            }
+        )
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <h1>电影排行榜</h1>
+        <ul>
+            <li><span>1</span>电影名称
+                <div class="content">
+                    <img src="images/7.jpg" alt="">
+                    <p>简介：电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称
+                    </p>
+                </div>
+
+            </li>
+            <li><span>2</span>电影名称
+                <div class="content">
+                    <img src="images/7.jpg" alt="">
+                    <p>简介：电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称
+                    </p>
+                </div>
+            </li>
+            <li><span>3</span>电影名称
+                <div class="content">
+                    <img src="images/7.jpg" alt="">
+                    <p>简介：电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称
+                    </p>
+                </div>
+            </li>
+            <li><span>4</span>电影名称
+                <div class="content">
+                    <img src="images/7.jpg" alt="">
+                    <p>简介：电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称
+                    </p>
+                </div>
+            </li>
+            <li><span>5</span>电影名称
+                <div class="content">
+                    <img src="images/7.jpg" alt="">
+                    <p>简介：电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称
+                    </p>
+                </div>
+            </li>
+            <li><span>6</span>电影名称
+                <div class="content">
+                    <img src="images/7.jpg" alt="">
+                    <p>简介：电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称电影名称
+                    </p>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</body>
+
+</html>

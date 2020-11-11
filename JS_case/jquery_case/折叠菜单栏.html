@@ -1,0 +1,105 @@
+<!-- sild()函数的应用，实现折叠菜单栏的效果 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .box {
+            width: 500px;
+            margin: 50px auto;
+
+        }
+
+        .box>li {
+            position: relative;
+            list-style: none;
+            border: 1px solid black;
+            border-bottom: none;
+            font-size: 20px;
+            line-height: 50px;
+            text-indent: 2em;
+
+        }
+
+        .box>li:last-child {
+            border-bottom: 1px solid black;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .content>li {
+            background-color: purple;
+            border-bottom: 1px solid white;
+            list-style: none;
+        }
+
+        span {
+            position: absolute;
+            top: 5px;
+            right: 30px;
+        }
+    </style>
+    <script src="jquery/jquery-3.5.1.js"></script>
+    <script>
+        $(function () {
+            $('.box>li').click(function () {
+                var sub = $(this).children('.content');
+                sub.slideDown();
+                var othersubs = $(this).siblings().children('.content');
+                othersubs.slideUp();
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+
+    <ul class="box">
+        <li>一级菜单<span>></span>
+
+            <ul class='content'>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+
+
+        </li>
+        <li>一级菜单<span>></span>
+            <ul class='content'>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单<span>></span></li>
+        <li>一级菜单<span>></span></li>
+        <li>一级菜单<span>></span></li>
+        <li>一级菜单<span>></span></li>
+        <li>一级菜单<span>></span></li>
+        <li>一级菜单<span>></span></li>
+    </ul>
+
+
+</body>
+
+</html>
