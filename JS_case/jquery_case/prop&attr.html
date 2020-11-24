@@ -1,0 +1,39 @@
+<!-- prop和attr的使用
+实现输入地址，切换相应的图片
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery/jquery-3.5.1.js"></script>
+    <script>
+        $(
+            function () {
+                var btn = document.getElementsByTagName("button")[0];
+                btn.onclick = function () {
+                    var input = document.getElementsByTagName('input')[0];
+                    var text = input.value;
+
+                    $("img").attr('src', text);
+
+                }
+
+            }
+        )
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <input type="text" /><button>修改图片</button>
+
+    <img src="https://www.baidu.com/img/flexible/logo/pc/result.png" alt="">
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .small {
+            float: left;
+            width: 30px;
+            height: 30px;
+            background-color: black;
+        }
+
+        .big {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="small">small</button>
+
+
+
+    <script>
+        var btn = document.getElementsByTagName('button');
+        var small = document.getElementById('small');
+        var big = document.getElementById('big');
+        var index = 0;
+        var flag = 0;
+
+
+        small.onclick = function () {
+            index++;
+            console.log(index);
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

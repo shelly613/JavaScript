@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            margin: 0px auto;
+            background-color: blue;
+            width: 500px;
+            height: 200px;
+            text-align: center;
+        }
+
+        li {
+            list-style: none;
+            float: left;
+            width: 100px;
+            height: 100px;
+
+        }
+
+        ul {
+            display: none;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <li>
+            <a href="#">微博 </a>
+            <ul>
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">博客</a>
+            <ul>
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">邮箱</a>
+            <ul>
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+    </div>
+    <script>
+        var box = document.querySelector('.box');
+        var lis = box.children;
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].onmouseover = function () {
+
+                this.children[1].style.display = 'block';
+            }
+            lis[i].onmouseout = function () {
+
+                this.children[1].style.display = 'none';
+            }
+
+        }
+    </script>
+</body>
+
+</html>
