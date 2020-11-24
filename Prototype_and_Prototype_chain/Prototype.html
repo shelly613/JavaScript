@@ -1,0 +1,72 @@
+<!-- 
+    1、什么是原型（prototype）?
+    *每个函数都有一个原型属性，称为显示原型，默认指向一个空对象，可通过原型属性给函数添加方法，以便实例对象调用。
+
+    2、有什么作用？
+    *方便给函数添加方法，每一个实例对象都可以调用这个方法，减少代码的冗余
+
+    3、为什么实例对象可以调用？
+        *每一个实例对象都有一个隐性原型（__proto__）
+        *隐性原型指向的对象和显示原型所指向的对象是一样的
+    4、为什么声明一个函数可以调用没有自己声明的方法
+        *对象是页面加载就存在的，对象有一个显示原型，指向一个地址值，假设0x456,其封装了一些方法
+        *声明了一个函数，指向一个地址值假设为0x123 函数默认有一个原型属性，指向一个空对象,空对象有一个隐性原型指向0x456
+        （为什么空对象里有隐性原型，空对象代表什么，代表的方法，为什么方法有，隐性原型代表的是实例对象的方法，）
+        *所以声明的一个函数，可以调用原始对象封装的方法，例如：Tostring()
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //每个函数都有一个原型属性，默认为空的对象类型（没有指定的方法）
+        //对象类型是对象的实例，每一个实例对象都有一个隐性原型（__proto__）
+        //每一个实例对象都有一个隐性原型（__proto__）给隐性原型添加方法，同样可以添加到函数方法中，创建新的函数实例对象同样也可以使用，
+
+        console.log(Object.prototype);
+        //创建一个函数
+        function Fn() {
+
+            var test1 = function () {
+                var a = 1
+                console.log(a)
+            }
+        }
+        console.log(Fn.prototype.__proto__);
+        //通过函数的原型添加方法
+        Fn.prototype.test2 = function () {
+            var a = 2;
+            console.log(a);
+        }
+        //创建一个实例对象
+        var fn = new Fn()
+        console.log(fn.__proto__.__proto__);
+        //用新创建的对象调用使用原型添加的方法
+        fn.test2()//输出2
+        //实例对象使用隐性原型添加方法
+        fn.__proto__.test3 = function () {
+            var a = 3;
+            console.log(a)
+        }
+        //重新创建一个实例对象
+        var fn1 = new Fn()
+        //调用实例对象添加的方法
+        fn1.test3()//输出3
+
+        //对象类型是对象的实例，每一个实例对象都有一个隐式原型（__proto__）显式原型和隐式原型链
+        console.log(Object.prototype === fn.__proto__.__proto__);
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
